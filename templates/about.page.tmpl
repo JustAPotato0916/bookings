@@ -1,0 +1,32 @@
+{{template "base" .}}
+
+{{define "content"}}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col">
+            <h1>This is about page</h1>
+
+            <p>This came from the template: {{index .StringMap "test"}}</p>
+
+            <p>
+                {{if ne (index .StringMap "remote_ip") ""}}
+                    Your remote IP is: {{index .StringMap "remote_ip"}}
+                {{else}}
+                    I don't know your remote IP. Visit <a href="/">Homepage</a> to find out.
+                {{end}}
+            </p>
+        </div>
+    </div>
+{{end}}
