@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/JustAPotato0916/bookings/pkg/config"
-	"github.com/JustAPotato0916/bookings/pkg/handlers"
-	"github.com/JustAPotato0916/bookings/pkg/render"
+	"github.com/JustAPotato0916/bookings/cmd/internal/config"
+	"github.com/JustAPotato0916/bookings/cmd/internal/handlers"
+	"github.com/JustAPotato0916/bookings/cmd/internal/render"
 	"github.com/alexedwards/scs/v2"
 	"log"
 	"net/http"

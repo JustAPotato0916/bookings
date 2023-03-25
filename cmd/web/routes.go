@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/JustAPotato0916/bookings/pkg/config"
-	"github.com/JustAPotato0916/bookings/pkg/handlers"
+	"github.com/JustAPotato0916/bookings/cmd/internal/config"
+	"github.com/JustAPotato0916/bookings/cmd/internal/handlers"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"net/http"

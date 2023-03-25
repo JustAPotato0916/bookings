@@ -2,8 +2,8 @@ package render
 
 import (
 	"bytes"
-	"github.com/JustAPotato0916/bookings/pkg/config"
-	"github.com/JustAPotato0916/bookings/pkg/models"
+	"github.com/JustAPotato0916/bookings/cmd/internal/config"
+	"github.com/JustAPotato0916/bookings/cmd/internal/models"
 	"github.com/justinas/nosurf"
 	"html/template"
 	"log"

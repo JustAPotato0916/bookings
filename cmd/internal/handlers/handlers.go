@@ -3,9 +3,9 @@ package handlers
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/JustAPotato0916/bookings/pkg/config"
-	"github.com/JustAPotato0916/bookings/pkg/models"
-	"github.com/JustAPotato0916/bookings/pkg/render"
+	"github.com/JustAPotato0916/bookings/cmd/internal/config"
+	"github.com/JustAPotato0916/bookings/cmd/internal/models"
+	"github.com/JustAPotato0916/bookings/cmd/internal/render"
 	"log"
 	"net/http"
 )
