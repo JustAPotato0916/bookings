@@ -3,10 +3,10 @@ package handlers
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/JustAPotato0916/bookings/cmd/internal/config"
-	"github.com/JustAPotato0916/bookings/cmd/internal/forms"
-	"github.com/JustAPotato0916/bookings/cmd/internal/models"
-	"github.com/JustAPotato0916/bookings/cmd/internal/render"
+	"github.com/JustAPotato0916/bookings/internal/config"
+	"github.com/JustAPotato0916/bookings/internal/forms"
+	"github.com/JustAPotato0916/bookings/internal/models"
+	"github.com/JustAPotato0916/bookings/internal/render"
 	"log"
 	"net/http"
 )
@@ -163,7 +163,7 @@ func (m *Repository) ReservationSummary(w http.ResponseWriter, r *http.Request) 
 	}
 
 	m.App.Session.Remove(r.Context(), "reservation")
-	
+
 	data := make(map[string]interface{})
 	data["reservation"] = reservation
 

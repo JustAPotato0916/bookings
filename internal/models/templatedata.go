@@ -1,6 +1,6 @@
 package models
 
-import "github.com/JustAPotato0916/bookings/cmd/internal/forms"
+import "github.com/JustAPotato0916/bookings/internal/forms"
 
 // TemplateData holds data sent from handlers to templates
 type TemplateData struct {
