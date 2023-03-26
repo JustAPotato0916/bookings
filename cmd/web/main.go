@@ -1,9 +1,11 @@
 package main
 
 import (
+	"encoding/gob"
 	"fmt"
 	"github.com/JustAPotato0916/bookings/cmd/internal/config"
 	"github.com/JustAPotato0916/bookings/cmd/internal/handlers"
+	"github.com/JustAPotato0916/bookings/cmd/internal/models"
 	"github.com/JustAPotato0916/bookings/cmd/internal/render"
 	"github.com/alexedwards/scs/v2"
 	"log"
@@ -19,6 +21,26 @@ var session *scs.SessionManager
 
 // main is the main application function
 func main() {
+	err := run()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println("Starting application on port", portNumber)
+
+	srv := &http.Server{
+		Addr:    portNumber,
+		Handler: routes(&app),
+	}
+
+	err = srv.ListenAndServe()
+	log.Fatal(err)
+}
+
+func run() error {
+	// what am i going to put in the session
+	gob.Register(models.Reservation{})
+
 	// change this to true when in production
 	app.InProduction = false
 
@@ -33,6 +55,7 @@ func main() {
 	tc, err := render.CreateTemplateCache()
 	if err != nil {
 		log.Fatal("Cannot create template cache")
+		return err
 	}
 
 	app.TemplateCache = tc
@@ -43,13 +66,5 @@ func main() {
 
 	render.NewTemplates(&app)
 
-	fmt.Println("Starting application on port", portNumber)
-
-	srv := &http.Server{
-		Addr:    portNumber,
-		Handler: routes(&app),
-	}
-
-	err = srv.ListenAndServe()
-	log.Fatal(err)
+	return nil
 }
