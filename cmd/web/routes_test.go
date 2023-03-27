@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/JustAPotato0916/bookings/cmd/internal/config"
+	"github.com/JustAPotato0916/bookings/internal/config"
 	"github.com/go-chi/chi/v5"
 	"testing"
 )
