@@ -4,10 +4,13 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/JustAPotato0916/bookings/internal/config"
+	"github.com/JustAPotato0916/bookings/internal/driver"
 	"github.com/JustAPotato0916/bookings/internal/forms"
 	"github.com/JustAPotato0916/bookings/internal/helpers"
 	"github.com/JustAPotato0916/bookings/internal/models"
 	"github.com/JustAPotato0916/bookings/internal/render"
+	"github.com/JustAPotato0916/bookings/internal/repository"
+	"github.com/JustAPotato0916/bookings/internal/repository/dbrepo"
 	"net/http"
 )
 
@@ -17,12 +20,14 @@ var Repo *Repository
 // Repository is the repository type
 type Repository struct {
 	App *config.AppConfig
+	DB  repository.DatabaseRepo
 }
 
 // NewRepo creates a new repository
-func NewRepo(a *config.AppConfig) *Repository {
+func NewRepo(a *config.AppConfig, db *driver.DB) *Repository {
 	return &Repository{
 		App: a,
+		DB:  dbrepo.NewPostgresRepo(db.SQL, a),
 	}
 }
 
@@ -38,6 +43,7 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 
 // About is the about page handler
 func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
+	m.DB.AllUsers()
 	// send data to the template
 	render.RenderTemplate(w, r, "about.page.tmpl", &models.TemplateData{})
 }
