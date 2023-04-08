@@ -3,3 +3,4 @@ coverage.out
 bookings.exe
 run.bat
 database.yml
+schema.sql
