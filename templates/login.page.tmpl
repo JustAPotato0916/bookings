@@ -6,7 +6,9 @@
             <div class="col">
                 <h1>Login</h1>
 
-                <form action="">
+                <form method="post" action="/user/login">
+
+                    <input type="hidden" name="csrf_token" value="{{.CSRFToken}}">
                     <div class="form-group mt-3">
                         <label for="email">Email:</label>
                         {{with .Form.Errors.Get "email"}}
