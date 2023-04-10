@@ -12,11 +12,18 @@ func (m *testDBRepo) AllUsers() bool {
 
 // InsertReservation inserts a reservation into the database
 func (m *testDBRepo) InsertReservation(res models.Reservation) (int, error) {
+	// if the room id is 2, then fail; otherwise pass
+	if res.RoomID == 2 {
+		return 0, errors.New("some error")
+	}
 	return 1, nil
 }
 
 // InsertRoomRestriction inserts a room restriction into the database
 func (m *testDBRepo) InsertRoomRestriction(r models.RoomRestriction) error {
+	if r.RoomID == 1000 {
+		return errors.New("some error")
+	}
 	return nil
 }
 
@@ -35,7 +42,7 @@ func (m *testDBRepo) SearchAvailabilityForAllRooms(start, end time.Time) ([]mode
 func (m *testDBRepo) GetRoomByID(id int) (models.Room, error) {
 	var room models.Room
 	if id > 2 {
-		return room, errors.New("Some error")
+		return room, errors.New("some error")
 	}
 
 	return room, nil
