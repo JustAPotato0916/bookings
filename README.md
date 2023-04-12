@@ -28,7 +28,10 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is the repository for learning Go (Golang). Follow the tutorial to make this.
+[![Product Name Screen Shot][product-screenshot]](https://github.com/JustAPotato0916/bookings)
+
+This is the repository for learning Go (Golang). <br>
+Building a bookings and reservation system for a Bed & Breakfast.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -37,6 +40,7 @@ This is the repository for learning Go (Golang). Follow the tutorial to make thi
 ### Built With
 
 * [![Go][Go.com]][Go-url]
+* [![bootstrap4][bootstrap-com]][bootstrap-url]
 * [chi router](https://github.com/go-chi/chi/v5)
 * [alex edwards SCS](https://github.com/alexedwards/scs/v2) session management
 * [nosurf](https://github.com/justinas/nosurf)
@@ -51,9 +55,13 @@ This is the repository for learning Go (Golang). Follow the tutorial to make thi
 * [chi router](https://github.com/go-chi/chi/v5)
 * [alex edwards SCS](https://github.com/alexedwards/scs/v2)
 * [nosurf](https://github.com/justinas/nosurf)
+* [bootstrap](https://getbootstrap.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
+[product-screenshot]: docs/images/screenshot.png
 [Go.com]: https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white
 [Go-url]: https://go.dev
+[bootstrap-com]: https://img.shields.io/badge/bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
+[bootstrap-url]: https://getbootstrap.com
